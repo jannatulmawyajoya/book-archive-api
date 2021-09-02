@@ -10,6 +10,21 @@
 </head>
 <body>
     
+    <!-- search area  -->
+    <div class="input-group mb-3 w-50 mx-auto mt-3">
+        <input id="input-field"  type="text" class="form-control" placeholder="Search the book you want" aria-label="Recipient's username"
+            aria-describedby="button-addon2">
+        <button onclick="loadData()" class="btn btn-outline-secondary" type="button" id="button-search">Search</button>
+    </div>
+
+    <!-- displaying how many results are created -->
+    <h3 id="book-numbers" class="text-center"></h3>
+
+    <!-- displaying the data  -->
+    <div id="search-container" class="row row-cols-1 row-cols-md-3 g-4">
+        
+</div>
+
     <script src="book.js"></script>
 </body>
 </html>
