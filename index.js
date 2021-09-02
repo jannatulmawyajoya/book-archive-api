@@ -4,7 +4,7 @@ const loadData = () => {
     // clearing the input field
     inputField.value = '';
     // generated the url 
-    const url =`http://openlibrary.org/search.json?q=${inputFieldText}`;
+    const url =`https://openlibrary.org/search.json?q=${inputFieldText}`;
     fetch(url)
     .then(res => res.json())
         .then(data => displayData(data));
