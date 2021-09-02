@@ -18,13 +18,15 @@ const displayData = books =>{
     document.getElementById('book-numbers').innerText= `Total Books: ${first20books.length}`;
     const searchContainer = document.getElementById('search-container');
     searchContainer.textContent ='';
+   
     first20books.forEach(book =>{
-           console.log(book);
+        //    console.log(book);
+        const bookImage = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML =`
             <div class="card">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="${bookImage ? bookImage: 'N/a'}" class="card-img-top" width="200px" height="400px" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Title: ${book.title ? book.title: 'N/a'}</h5>
                 <h5 class="card-title">Author Name: ${ book.author_name ? book.author_name[0]: 'N/a'}</h5>
