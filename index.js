@@ -7,7 +7,7 @@ const loadData = () => {
     const url =`https://openlibrary.org/search.json?q=${inputFieldText}`;
     fetch(url)
     .then(res => res.json())
-        .then(data => displayData(data));
+    .then(data => displayData(data));
 };
 
 // showing errors
@@ -22,7 +22,7 @@ const displayData = data =>{
     // how many books will be showed in the UI
     const first30books =books.slice(0,30);
     // show total search result 
-    document.getElementById('book-numbers').innerText = `Total Books: ${data.numFound}`;
+    document.getElementById('book-numbers').innerText = `Total Results: ${data.numFound}`;
     const searchContainer = document.getElementById('search-container');
     searchContainer.textContent ='';
 
@@ -44,8 +44,8 @@ const displayData = data =>{
             div.classList.add('col');
             // setting the innerhtml of each div
             div.innerHTML = `
-            <div class="card">
-            <img src="${bookImage ? bookImage : 'No image found'}" class="card-img-top" width="200px" height="400px" alt="...">
+            <div class="card h-100">
+            <img src="${bookImage ? bookImage : 'No result found'}"class="card-img-top" width="200px" height="400px" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Title: ${book.title ? book.title : 'N/a'}</h5>
                 <h5 class="card-title">Author Name: ${book.author_name ? book.author_name[0] : 'N/a'}</h5>
