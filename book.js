@@ -7,7 +7,7 @@ const loadData = () => {
     const url =`http://openlibrary.org/search.json?q=${inputFieldText}`;
     fetch(url)
     .then(res => res.json())
-        .then(data => displayData(data.docs));
+        .then(data => displayData(data));
 };
 
 // showing errors
@@ -17,11 +17,12 @@ const displayError = () => {
 }
 
 // displaying the search results
-const displayData = books =>{
-    // how many books will be showed in the ui
+const displayData = data =>{
+    const books = data.docs;
+    // how many books will be showed in the UI
     const first30books =books.slice(0,30);
     // show total search result 
-    document.getElementById('book-numbers').innerText= `Total Books: ${books.length}`;
+    document.getElementById('book-numbers').innerText = `Total Books: ${data.numFound}`;
     const searchContainer = document.getElementById('search-container');
     searchContainer.textContent ='';
 
